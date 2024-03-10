@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./css/master.css" rel="stylesheet">
+        <title>Impersonate REST</title>
+    </head>
+    <body>
+        <main>
+            <h1>Impersonate REST</h1>
+            <h2>Atlassian Jira plugin that allows Jira admins to use the Jira REST API on behalf of another user.</h2>
+            
+            <section id="example">
+                <h3>Example Usage</h3>
+                <p>To use the Jira REST API on behalf of another user, include the 'impersonate-user' header in your request. Here is an example using curl:</p>
+                <p class="code">
+                    curl -u admin:admin -X POST -H "impersonate-user: username" -H "Content-Type: application/json" --data "{ \"fields\": { \"project\": { \"key\": \"TEST\" }, \"summary\": \"Issue summary here\", \"issuetype\": { \"name\": \"Bug\" } } }" http://localhost:8080/rest/api/2/issue
+                </p>
+                <img src="./images/jira-00.png" alt="Config panel">
+            </section>
+
+            <section id="error-handling">
+                <h3>Error Handling</h3>
+                <p>If the Jira user does not exist, the API will return a Bad Request response. For example:</p>
+                <p class="code">
+                    {"error": "User username not found"}
+                </p>
+            </section>
+
+            <section id="example">
+                <h3>Config panel</h3>
+                <p>To use the Jira REST API on behalf of another user, include the 'impersonate-user' header in your request. Here is an example using curl:</p>
+                <img src="./images/jira-01.png" alt="Config panel">
+            </section>
+
+            <div id="contact">
+                <a href="mailto:contact@klimbuddies.nl" target="_blank">
+                    Want to get in touch?
+                </a>
+            </div>
+
+            <div id="contact">
+                <a href="mailto:contact@klimbuddies.nl" target="_blank">
+                    Want to get in touch?
+                </a>
+            </div>
+        </main>
+    </body>
+</html>
